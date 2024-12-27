@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+        <!-- Контейнер для нотифікацій -->
+        <div id="notification-container" class="notification-container"></div>
+    <div id="ui-container" style="display: none;">
+        <div class="container">
+            <div class="sidebar">
+                <div class="fictional-company-logo">
+                    <div class="logomark">
+                        <img src="img/Logomark.svg" alt="Logomark">
+                    </div>
+                    <div class="gridlines-ui">Union RolePlay</div>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-icon">
+                        <img src="img/Icon.svg" alt="Profile Icon">
+                    </div>
+                    <div class="profile-info">
+                        <div id="profile-name" class="profile-name">Player Name</div>
+                        <div id="profile-job" class="profile-role">Player Job</div>
+                    </div>
+                    
+                    <div class="profile-arrow">
+                        <img src="img/DownArrow.svg" alt="Arrow Icon">
+                    </div>
+                </div>
+                <!-- Статичні елементи меню залишаються -->
+                <div class="menu-item active" data-target="overview">
+                    <div class="icon">
+                        <img src="img/Building_04.svg" alt="Overview Icon">
+                    </div>
+                    <div class="menu-text">Organization</div>
+                </div>
+                <div class="menu-item" data-target="achievements">
+                    <div class="icon">
+                        <img src="img/Wavy.svg" alt="Achievements Icon">
+                    </div>
+                    <div class="menu-text">Achievements</div>
+                </div>
+                
+                <div class="menu-item" data-target="events">
+                    <div class="icon">
+                        <img src="img/Ticket_Voucher.svg" alt="Events Icon">
+                    </div>
+                    <div class="menu-text">Ivents</div>
+                    <div class="badge">2</div>
+                </div>
+
+                <!-- Динамічні пункти меню будуть додані сюди -->
+                <div id="dynamic-menu"></div>
+                <div class="menu-item settings-menu" data-target="settings">
+                    <div class="icon">
+                        <img src="img/Settings.svg" alt="Settings Icon">
+                    </div>
+                    <div class="menu-text">Settings</div>
+                    <div class="settings-arrow">
+                        <img src="img/DownArrow.svg" alt="Arrow Icon" id="settings-arrow">
+                    </div>
+                    <div class="dropdown-menu" id="settings-dropdown">
+                        <div class="dropdown-item" data-target="general">General</div>
+                        <!--<div class="dropdown-item" data-target="commands">Commands</div> -->
+                        <!--<div class="dropdown-item" data-target="keys">Keys</div> -->
+                        <!--<div class="dropdown-item" data-target="elements">Elements</div> -->
+                        <!--<div class="dropdown-item" data-target="hud">HUD</div> -->
+                    </div>
+                    
+                </div>
+                <div class="profile-completion">
+                    <div class="progress-circle">
+                        <svg class="progress-ring" width="92" height="92">
+                            <circle class="progress-ring__circle" stroke="green" stroke-width="8" fill="transparent" r="40" cx="46" cy="46"/>
+                        </svg>
+                        <span class="progress-text">40%</span>
+                    </div>
+                    <div class="completion-info">
+                        <div class="completion-title">Random Skill</div>
+                        <div class="completion-text">Keep improving your skills</div>
+                        <div class="profile-button" data-target="stats">Statistics</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="main-content">
+                <div id="overview" class="content-panel active">
+                    <h1>Organization</h1>
+                    <div class="under-construction-container">
+                        <p class="under-construction">Page under construction</p>
+                    </div>
+                    <a href="#" class="btn">Dev Blog</a>
+                </div>
+                
+                <div id="shop" class="content-panel">
+                    <h1>Shop</h1>
+                    <p>Welcome to the shop section. Browse our products and find what you need.</p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+                <div id="scheduled" class="content-panel">
+                    <h1>Schedule</h1>
+                    <p>Here is your schedule. Track your tasks and events.</p>
+                    <a href="#" class="btn">View Schedule</a>
+                </div>
+                <div id="released" class="content-panel">
+                    <h1>Released</h1>
+                    <p>Check out the latest releases and updates here.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div id="settings" class="content-panel">
+                    <h1>Settings</h1>
+                    <p>Configure your preferences and parameters here.</p>
+                    <a href="#" class="btn">Update Settings</a>
+                </div>
+                <div id="events" class="content-panel">
+                    <h1>Events</h1>
+                    <div class="event-list">
+                        <!-- Event list will be dynamically added -->
+                    </div>
+                </div>
+                
+                
+                
+                <div id="comments" class="content-panel">
+                    <h1>Comments</h1>
+                    <p>Read and reply to comments from other users.</p>
+                    <a href="#" class="btn">View Comments</a>
+                </div>
+                <div id="stats" class="content-panel playerstats-content-panel">
+                    <h1>Skills</h1>
+                    <p>Skills can be improved by gaining experience in relevant activities and jobs.</p>
+                    <table class="playerstats-table">
+                        <thead>
+                            <tr>
+                                <th>Skill</th>
+                                <th>Level</th>
+                                <th>Experience</th>
+                                <th>Progress</th>
+                            </tr>
+                        </thead>
+                        <tbody class="playerstats-skills-container">
+                            <!-- Skill cards will be added here via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Skill description modal -->
+                <div id="skill-details-modal" class="skill-modal">
+                    <div class="skill-modal-content">
+                        <div class="skill-modal-header">
+                            <h2 id="skill-title">Skill Name</h2>
+                            <span id="skill-details-close" class="skill-modal-close-btn">&times;</span>
+                        </div>
+                        <div class="skill-modal-body">
+                            <!-- Dynamic content will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+                
+                  
+                <div id="achievements" class="content-panel hidden">
+                    <h1>Achievements</h1>
+                    <div class="achievements-grid">
+                        <!-- Динамічні ачівки будуть додані сюди через JavaScript -->
+                    </div>
+                </div>
+                
+
+                <div id="general" class="content-panel hidden">
+                    <h1>General Settings</h1>
+                    <p>Adjust the appearance and behavior of the interface.</p>
+                    <div class="settings-container">
+                        <!-- Themes -->
+                        <div class="settings-section">
+                            <h2>Theme</h2>
+                            <div class="theme-grid">
+                                <label class="theme-card">
+                                    <input type="radio" name="theme" value="light" id="theme-light">
+                                    <div class="theme-preview light"></div>
+                                    <span>Light</span>
+                                </label>
+                                <label class="theme-card">
+                                    <input type="radio" name="theme" value="dark" id="theme-dark">
+                                    <div class="theme-preview dark"></div>
+                                    <span>Dark</span>
+                                </label>
+                                <label class="theme-card">
+                                    <input type="radio" name="theme" value="moonlight" id="theme-moonlight">
+                                    <div class="theme-preview moonlight"></div>
+                                    <span>Moonlight</span>
+                                </label>
+                            </div>
+                        </div>
+                
+                
+                        <!-- Сітка рівнів -->
+                        <div class="settings-section">
+                            <h2>Сітка рівнів</h2>
+                            <div class="levelgrid-options">
+                                <label>
+                                    <input type="radio" name="levelgrid" value="grid">
+                                    Grid
+                                </label>
+                                <label>
+                                    <input type="radio" name="levelgrid" value="rows">
+                                    Rows
+                                </label>
+                                <label>
+                                    <input type="radio" name="levelgrid" value="icons">
+                                    Icons
+                                </label>
+                                <label>
+                                    <input type="radio" name="levelgrid" value="other">
+                                    Other
+                                </label>
+                            </div>
+                        </div>
+                
+                        <!-- Кнопка збереження -->
+                        <button id="save-settings" class="save-button">SAVE</button>
+                    </div>
+                    <div id="notification-alert" class="notification-alert"></div>
+                </div>                
+                
+                <div id="commands" class="content-panel">
+                    <h1>Commands</h1>
+                    <p>Command settings are located here.</p>
+                </div>
+                <div id="keys" class="content-panel">
+                    <h1>Keys</h1>
+                    <p>Key settings are located here.</p>
+                </div>
+                <div id="elements" class="content-panel">
+                    <h1>Elements</h1>
+                    <p>Element settings are located here.</p>
+                </div>
+                <div id="hud" class="content-panel">
+                    <h1>HUD</h1>
+                    <p>HUD settings are located here.</p>
+                </div>
+                <div id="media" class="content-panel">
+                    <h1>Media</h1>
+                    <p>Welcome to the media section. Here you'll find all the information and content related to media.</p>
+                    <div id="media-partners" class="media-partners">
+                        <!-- Media partner cards will be added here via JavaScript -->
+                    </div>
+                </div>
+                
+            
+                <div id="media-partners" class="content-panel">
+                    <h1>Media Partners</h1>
+                    <p>Content for media partners is located here.</p>
+                </div>
+                <!-- Media Statistics here -->
+                <div id="media-stats" class="content-panel">
+                    <h1>Statistics</h1>
+                </div>
+                
+                <div id="media-settings" class="content-panel">
+                    <h1>Settings</h1>
+                    <p>Content for media settings is located here.</p>
+                </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

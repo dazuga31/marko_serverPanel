@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Experience Update</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="experienceInfo">Waiting for updates...</div>
+
+    <script>
+        window.addEventListener('message', function(event) {
+            var data = event.data;
+            var infoDiv = document.getElementById('experienceInfo');
+            infoDiv.innerHTML = `Role: ${data.role}<br>
+                                 Current XP: ${data.currentXP}<br>
+                                 New XP: ${data.newXP}<br>
+                                 Current Level: ${data.currentLevel}<br>
+                                 New Level: ${data.newLevel}`;
+        });
+    </script>
+</body>
+</html>
